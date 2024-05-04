@@ -39,6 +39,8 @@ class CommentResource extends Resource
                 Tables\Columns\TextColumn::make('post.title')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('body')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
