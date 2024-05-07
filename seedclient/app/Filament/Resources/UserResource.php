@@ -13,6 +13,9 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\Select;
+
 
 
 class UserResource extends Resource
@@ -25,10 +28,17 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name'),
-                TextInput::make('email'),
-                TextInput::make('password'),
-            ]);
+                TextInput::make('name')
+                ->required(),
+                TextInput::make('email')
+                ->email()
+                ->required(),
+                TextInput::make('password')
+                ->password()
+                ->hiddenOn('edit', true)
+                ->required(),
+                Select::make('roles')->multiple('roles')->relationship('roles', 'name')
+                ]);
     }
 
     public static function table(Table $table): Table
@@ -36,14 +46,34 @@ class UserResource extends Resource
         return $table
             ->columns([
                 //
+                TextColumn::make('name'),
+                TextColumn::make('email'),
+                TextColumn::make('email_verified_at'),
+                TextColumn::make('roles.name'),
             ])
             ->filters([
                 //
+                Tables\Filters\Filter::make('verified')
+                -> query(fn(Builder $query): Builder=>$query->whereNotNull('email_verified_at')),
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('Verify')
+                ->icon('heroicon-m-check-badge')
+                ->action(function (User $user){
+                    $user->email_verified_at = Date('Y-m-d H:i:s');
+                    $user->save();
+                }),
+
+                Tables\Actions\Action::make('unverify')
+                ->icon('heroicon-m-x-circle')
+                ->action(function (User $user){
+                    $user->email_verified_at = null;
+                    $user->save();
+                })
             ])
-            ->bulkActions([
+            ->bulkActions([ 
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
