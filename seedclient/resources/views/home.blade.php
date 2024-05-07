@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind Blog Template</title>
-    <meta name="author" content="Ismael Catala">
-    <meta name="description" content="El Rincon de Isma">
+    <meta name="author" content="Robinson Galvez">
+    <meta name="description" content="SeedEM">
 
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
@@ -29,23 +29,29 @@
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
 
             <nav>
-                <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
+           
+                 <a href="https://www.seedem.com">
+                 <img src="/images/Logo Seed Horizontal White.png"  alt="SeeDEM Logo" class="h-8 w-auto">
+                 </a>
+            </nav>   
+            <!--<ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
+               
                     <li><a class="hover:text-gray-200 hover:underline px-4" href="#">Shop</a></li>
                     <li><a class="hover:text-gray-200 hover:underline px-4" href="#">About</a></li>
-                </ul>
-            </nav>
+                </ul>-->
+           
 
             <div class="flex items-center text-lg no-underline text-white pr-6">
-                <a class="" href="#">
+                <a class="" href="https://www.facebook.com/seedem">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a class="pl-6" href="#">
+                <a class="pl-6" href="https://www.drupal.org/seed-em">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a class="pl-6" href="#">
+                <a class="pl-6" href="https://twitter.com/SeeD_EM">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a class="pl-6" href="#">
+                <a class="pl-6" href="https://www.linkedin.com/company/seed-em">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
@@ -56,16 +62,17 @@
     <!-- Text Header -->
     <header class="w-full container mx-auto">
         <div class="flex flex-col items-center py-12">
-            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
-                Minimal Blog
+            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="http://127.0.0.1:8001/dashboard/login">
+                SeeD Client
             </a>
             <p class="text-lg text-gray-600">
-                EL RINCON DE ISMA
+                Sistema de gestión de tickets
             </p>
         </div>
     </header>
 
-    <!-- Topic Nav -->
+
+    <!-- Topic Nav 
     <nav class="w-full py-4 border-t border-b bg-gray-100" ">
         
         <div class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
@@ -79,12 +86,12 @@
             </div>
         </div>
     </nav>
-
+    -->
 
     <div class="container mx-auto flex flex-wrap py-6">
 
         <!-- Posts Section -->
-        <section class="w-full md:w-2/3 flex flex-col items-center px-3">
+        <section class="w-full  flex flex-col items-center px-3">
 
         @foreach ($posts as $post)
 
@@ -116,7 +123,7 @@
 
         </section>
 
-        <!-- Sidebar Section -->
+        <!-- Sidebar Section 
         <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
 
             <div class="w-full bg-white shadow flex flex-col my-4 p-6">
@@ -126,23 +133,26 @@
                     Get to know us
                 </a>
             </div>
-
+        -->
 
         </aside>
 
     </div>
 
-    <footer class="w-full border-t bg-white pb-12">
+    <footer class="w-full border-t bg-blue-800 pb-12 ">
         
         <div class="w-full container mx-auto flex flex-col items-center">
             <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
-                <a href="#" class="uppercase px-3">About Us</a>
-                <a href="#" class="uppercase px-3">Privacy Policy</a>
-                <a href="#" class="uppercase px-3">Terms & Conditions</a>
-                <a href="#" class="uppercase px-3">Contact Us</a>
+                <a href="https://www.seedem.co/es" class="uppercase px-6 text-white">Acerca de</a>
+                <a href="https://www.seedem.co/es/politicas-de-privacidad" class="uppercase px-6 text-white">Política de privacidad</a>
+                <a href="https://www.expertosendrupal.com/" class="uppercase px-6 text-white">Expertos Drupal</a>
+                <a href="https://www.seedem.co/es/contactenos" class="uppercase px-6 text-white">Contactenos</a>
             </div>
-            <div class="uppercase pb-6">&copy; myblog.com</div>
+            <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-3">
+                <a href="https://www.seedem.co/" class="uppercase pb-3 text-white"> info@seedem.co </a>
+            </div>
         </div>
+
     </footer>
 
     
