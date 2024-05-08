@@ -62,7 +62,7 @@
     <!-- Text Header -->
     <header class="w-full container mx-auto">
         <div class="flex flex-col items-center py-12">
-            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="http://127.0.0.1:8001/dashboard/login">
+            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="http://127.0.0.1:8000/dashboard/login">
                 SeeD Client
             </a>
             <p class="text-lg text-gray-600">
